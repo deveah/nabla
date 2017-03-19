@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>&nabla;</title>
+    
+    <!-- Old Standard TT (400, 400 italic, and 700) -->
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700" rel="stylesheet">
+
+    <style>
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    body {
+        font-size: 20px;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid black;
+    }
+    a:visited {
+        color: #000;
+    }
+    .container {
+        width: 90%;
+        padding: 0 auto;
+        margin: 0 auto;
+
+        font-family: "Old Standard TT", serif;
+    }
+    .header {
+        padding-top: 10rem;
+        font-size: 5rem;
+        text-align: center;
+    }
+    .header span {
+        margin: 1rem;
+        padding: 1rem;
+        color: white;
+        background: linear-gradient(270deg, #43f500, #c93df2);
+        background-size: 400% 400%;
+
+        -webkit-animation: AnimationName 2s ease infinite;
+        -moz-animation: AnimationName 2s ease infinite;
+        animation: AnimationName 2s ease infinite;
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .under-header {
+        padding-bottom: 5rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .text-block {
+        width: 33vw;
+        margin: 0 auto;
+        text-align: justify;
+        line-height: 1.5;
+        padding-bottom: 2rem;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span>&nabla;</span>
+    </div>
+    <div class="under-header">
+        An abstract puzzle game
+    </div>
+
+    <div class="text-block">
+        <p>&nabla; is an abstract puzzle game based on the
+        <a href="https://en.wikipedia.org/wiki/Four_color_theorem">Four color theorem</a>.
+        The player's goal is to assign each <i>territory</i> with a color,
+        one of four, in such a pattern that no two territories that share
+        a <i>border</i> have the same color assigned.</p>
+
+        <p>To assign a color to a cell, just click on the cell. If the cell
+        had no previous color, it will get one. If it indeed had a color
+        beforehand, you will enter a cyclic permutation of colors from which
+        to choose. If you think you've got too much color someplace, just press
+        the cell for a little while longer, and you'll clear it of its
+        assigned color.</p>
+
+        <p>Now play the game a bit before continuing. I insist.</p>
+
+        <p>The game's <i>atmosphere</i> and <i>aesthetics</i> have been
+        crafted in a colorful, yet calm sense, and aim to impose a
+        nuance of rhythm in the mind of its player.</p>
+
+        <p>From a technical point of view, the game is implemented (albeit
+        poorly) in the programming language called
+        <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>,
+        using a <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>
+        <a href="https://en.wikipedia.org/wiki/Canvas_element">Canvas element</a>
+        as a rendering space!</p>
+
+        <p>Even more, the input is handled using the lovely
+        <a href="http://hammerjs.github.io/">Hammer.JS</a>! And let's not
+        forget the amazing JavaScript Voronoi
+        <a href="https://github.com/gorhill/Javascript-Voronoi">
+        diagram generator</a>, without whom this game would not exist today.</p>
+
+        <p>The game's initial form was based on <a href="https://phaser.io">
+        Phaser</a>, and written in <a href="https://www.typescriptlang.org">
+        TypeScript</a>, and these two pieces of poetry now echo in the codebase
+        &mdash; the classes are defined in the style of TypeScript's compiled
+        output, and the body of the <i>Nabla</i> class is formed by a structure
+        similar to Phaser's tutorial-recommended architecture.</p>
+
+        <p>In a sense, the structure of the code is reminiscent of
+        the hard reality that objects lose their shape over time.</p>
+
+        <p>Now back to a technical postlude, the game's source code is
+        licensed under the terms and conditions of the
+        <a href="https://opensource.org/licenses/MIT">MIT license</a>.
+        Please contribute with issues and suggestions, they are
+        welcome and encouraged!</p>
+    </div>
+</div>
+</body>
+</html>

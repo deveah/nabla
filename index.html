@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>&nabla;</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700" rel="stylesheet">
+
+    <script src="rhill-voronoi-core.js"></script>
+    <script src="hammer.js"></script>
+    <script src="app-nophaser.js"></script>
+
+    <style>
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .footer {
+        font-family: 'Old Standard TT', serif;
+        font-size: 12px;
+        text-align: center;
+        color: #aaa;
+    }
+    a {
+        color: #888;
+        text-decoration: none;
+        border-bottom: 1px solid #aaa;
+    }
+    a:visited {
+        color: #888;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="main-stage"></canvas>
+
+    <div class="footer">
+        &copy; 2017, Vlad Dumitru.<br>
+        Please consult the <a href="doc.html">documentation</a> if in need for help.
+    </div>
+</body>
+<script>
+    console.log("%cWelcome to ∇!", "background: #cef;");
+    console.log("Please submit bug reports and recommendations at https://github.com/deveah/nabla");
+
+    var canvasElement = document.getElementById('main-stage');
+    var game = new Nabla(canvasElement);
+
+    var hammer = new Hammer(canvasElement);
+    var bound = game.processInput.bind(game);
+    hammer.on('tap press', bound);
+
+    var loop = function() {
+        game.update();
+        game.render();
+
+        window.requestAnimationFrame(loop);
+    };
+
+    window.requestAnimationFrame(loop);
+
+    window.addEventListener('resize', game.resize.bind(game));
+</script>
+</html>
